@@ -14,11 +14,23 @@
 
   <section>
 
-    <fieldset>
-      <input id="input-parks" type="text" placeholder="parks by feature">
+    <fieldset id="parkFeatures">
+      <label>Parks</label>
+      <select id="selection-parks">
+          <!-- <option value="none"></option> -->
+          <option value="camping_available_by_permit">Camping</option>
+          <option value="dog_park">Dog Park</option>
+          <option value="hiking_trails">Hiking Trails</option>
+          <option value="lake">Lake</option>
+          <option value="mountain_bike_trails">Mountian Bike Trails</option>
+          <option value="playground">Playground</option>
+          <option valu="spray_park">Spray Park</option>
+          <option value="skate_park">Skate Park</option>
+          <option value="walk_jog_paths">Walking/Jogging Trails</option>
+      </select>
       <button id="button-parks" type="submit">Search</button>
     </fieldset>
-    
+
     <fieldset>
       <input id="input-restaurants" type="text" placeholder="restaurants by food type">
       <button id="button-restaurants" type="submit">Search</button>
@@ -28,7 +40,7 @@
       <input id="input-meetups" type="text" placeholder="meetup type">
       <button id="button-meetups" type="submit">Search</button>
     </fieldset>
-    
+
     <fieldset>
       <input id="input-concerts" type="text" placeholder="concerts">
       <button id="button-concerts" type="submit">Search</button>
@@ -36,11 +48,14 @@
 
   </section>
 
-  <section id="results">
+  <section>
+
     <h2>Results</h2>
 
+    <article id="results"></article>
+
   </section>
-  
+
   <section id="itinerary">
     <h2>My Itinerary</h2>
     <h3 id="park-itinerary"><strong>Park: </strong></h3>
@@ -49,7 +64,13 @@
     <h3 id="concert-itinerary"><strong>Concert: </strong></h3>
   </section>
   <script src="scripts/meetup_api.js"></script>
+
+
   <script src="scripts/keys.js"></script>
-<script src="scripts/concerts.js"></script>
+  <script src="scripts/api_Restaurant.js"></script>
+  <script src="scripts/keys.js"></script>
+  <script src="scripts/parks.js"></script>
+  <script src="scripts/concerts.js"></script>
 </body>
 </html>
+
