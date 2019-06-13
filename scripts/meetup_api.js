@@ -2,7 +2,8 @@
 //   return fetch(`https://www.eventbriteapi.com/v3/events/search/?location.address=nashville&token=${meetup_app_keys}&q=${meetup_type}`)
 //   .then( meetupData => meetupData.json())
 // }
-
+let uniqueButtonId = 0
+let uniqueMeetupId = 0
 let searchInput = document.querySelector("#input-meetups");
 document.querySelector("#button-meetups").addEventListener("click", () => {
   let meetup_type = searchInput.value;
@@ -14,10 +15,24 @@ document.querySelector("#button-meetups").addEventListener("click", () => {
     .then(meetup => {
       let meetupEvents = meetup.events;
       document.querySelector("#results").innerHTML = "";
-      for (let i = 0; i < meetupEvents.length; i++)
+      for (let i = 0; i < meetupEvents.length; i++) {
+        uniqueMeetupId++
+        uniqueButtonId++
         AddMeetupToDom(createMeetupComponent(meetupEvents[i]));
+      }
     });
 });
+
+
+let resultField = document.getElementById("results")
+
+resultField.addEventListener("click", () => {
+    if (event.target.id.includes("butt-")) {
+        let buttonIdArray = event.target.id.split ("-")
+        let meetupElement = document.getElementById(`meet-${buttonIdArray[1]}`).textContent
+        putMyMeetupIntoTheItinerary(meetupElement)
+    }
+  })
 
 function AddMeetupToDom(meetupName) {
   document.getElementById("results").innerHTML += meetupName;
@@ -25,6 +40,11 @@ function AddMeetupToDom(meetupName) {
 
 function createMeetupComponent(meetupObj) {
   console.log(meetupObj);
-  return `<h2>${meetupObj.name.text}</h2>
-  <button>Save</button>`
+  return `<h2 id = meet-${uniqueMeetupId}>${meetupObj.name.text}</h2>
+  <button id = butt-${uniqueButtonId}>Save</button>`;
 }
+
+
+function putMyMeetupIntoTheItinerary(meetupElement) {
+  document.getElementById("meetup-itinerary").innerHTML = "meetup:" + meetupElement;
+} 

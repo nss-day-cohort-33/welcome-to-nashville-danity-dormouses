@@ -1,4 +1,14 @@
 # Welcome to Nashville: Build an itinerary for a day trip to Music City
+* Find files for this project on [github](https://github.com/nashville-software-school/welcome-to-nashville)
+
+* Link for wireframe [HERE](https://github.com/nashville-software-school/welcome-to-nashville/blob/master/welcome_nash_wireframe2.png)
+
+
+* Each API will require the use of a key from the following sources:
+
+* Use [Postman](https://www.getpostman.com/) for interacting with HTTP APIs.
+
+
 
 In this app users can search for four different things to do/visit in Nashville:
 * parks -- using the Nashville [Metro Gov API](https://dev.socrata.com/foundry/data.nashville.gov/xbru-cfzi)
@@ -37,6 +47,19 @@ To help you along, here is a wireframe of how your app might look
 ![welcome wireframe](./welcome_nash_wireframe2.png)
 
 ## Notes about the APIs
+# Each API will require the use of a key from the following sources:
+1.  Metro Gov API
+    *  https://dev.socrata.com/foundry/data.nashville.gov/74d7-b74t
+1.  Zomato API
+    *  https://developers.zomato.com/api
+1.  Eventbrite API
+    *  https://www.eventbrite.com/platform/api
+1.  Ticketmaster API
+    *  https://developer.ticketmaster.com/products-and-docs/apis/           getting-started/
+
+##Follow the instructions for each API to secure key and id if needed.  
+
+Use 
 
 ### Eventbrite API
 
