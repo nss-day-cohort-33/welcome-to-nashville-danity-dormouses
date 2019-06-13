@@ -23,9 +23,9 @@ document.getElementById("button-restaurants").addEventListener("click", () => {
 })
  
 
-let resultField = document.getElementById("results")
+let resultFieldRest = document.getElementById("results")
 
-resultField.addEventListener("click", () => {
+resultFieldRest.addEventListener("click", () => {
     if (event.target.id.includes("butt-")) {
             // console.log("this is the event ID before split", event.target.id)
         let buttonIdArray = event.target.id.split("-")
