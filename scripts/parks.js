@@ -32,9 +32,6 @@ document.querySelector("#button-parks").addEventListener("click", () => {
           let idNumber = idArray[1]
           let parkId = "parkname-" + idNumber
           let parkName = document.getElementById(parkId).textContent
-
-          console.log(parkName);
-
           AddSelectedComponentToDom(createItineraryComponent(parkName));
         });
       });
@@ -56,9 +53,6 @@ function createParkSearchComponent(parkObj, index) {
     <h3 id="parkname-${index}">${parkObj.park_name}</h3>
     <button class="save-btn" id="savebtn-${index}">Save</button>
   `;
-
-// use split after dash to target index id will produce array, event.target.id
-
 }
 
 function createItineraryComponent(park) {
