@@ -24,9 +24,9 @@ document.querySelector("#button-meetups").addEventListener("click", () => {
 });
 
 
-let resultField = document.getElementById("results")
+let resultFieldMeet = document.getElementById("results")
 
-resultField.addEventListener("click", () => {
+resultFieldMeet.addEventListener("click", () => {
     if (event.target.id.includes("butt-")) {
         let buttonIdArray = event.target.id.split ("-")
         let meetupElement = document.getElementById(`meet-${buttonIdArray[1]}`).textContent

@@ -16,9 +16,9 @@ document.querySelector("#button-concerts").addEventListener("click", () => {
     });
 });
 
-let resultField = document.querySelector("#results")
+let resultFieldConcert = document.querySelector("#results")
 
-resultField.addEventListener("click", () => {
+resultFieldConcert.addEventListener("click", () => {
 	if (event.target.id.includes("butt-")) {
 		let buttonIdArray = event.target.id.split("-")
 		let concertElement = document.getElementById(`conc-${buttonIdArray[1]}`).textContent
