@@ -3,6 +3,8 @@
 //     .then( foodFromApi => foodFromApi.json())
 // }
 
+let uniqueRestId = 0
+let uniqueButtonId = 0 
 
 let inputCuisineData = document.getElementById("input-restaurants")
 document.getElementById("button-restaurants").addEventListener("click", () => {
@@ -12,29 +14,45 @@ document.getElementById("button-restaurants").addEventListener("click", () => {
     .then(food => {
         document.getElementById("results").innerHTML = "";
       for (let i = 0; i <food.restaurants.length ; i++) {
+          uniqueButtonId++ 
+          uniqueRestId++
         AddFoodComponentToDom(createFoodSearchComponent(food.restaurants[i]))
         
         }
     })
 })
-   
+ 
+
+let resultField = document.getElementById("results")
+
+resultField.addEventListener("click", () => {
+    if (event.target.id.includes("butt-")) {
+            // console.log("this is the event ID before split", event.target.id)
+        let buttonIdArray = event.target.id.split("-")
+            // console.log("this is the event ID after the split", buttonIdArray)
+        let restaurantElement = document.getElementById(`rest-${buttonIdArray[1]}`).textContent
+        putMyRestaurantIntoTheItinerary(restaurantElement)
+    }
+})
+
 
 function AddFoodComponentToDom(nameOfRestaurant) {
     document.getElementById("results").innerHTML += nameOfRestaurant;
 }
 
-
 function createFoodSearchComponent(foodObj) {
     return `
-        <h2>${foodObj.restaurant.name}</h2>
-            <button>Save</button>
+        <h2 id = rest-${uniqueRestId}>${foodObj.restaurant.name}</h2>
+            <button id = butt-${uniqueButtonId}>Save</button>
     `;
 } 
 
-//         // first we need to fetch the getCuisineArray
-//         // then we need to loop through the array
-//         // then we need to target the cuisine's ID value
-//         // then we need to take the id of that cuisine value and put it in the 
-//         // getRestaurantByCuisineApi parameter(Cuisine ID) and run that and loop through that Array
-//         // then we need to take those results (restaurant name) and target the "results-id" on the dom
-//         // and dynamically put the results of all the restaurants with that cuisine in the do
+function putMyRestaurantIntoTheItinerary (restaurantElement) {
+    document.getElementById("restaurant-itinerary").innerHTML = "Restaurant:" + restaurantElement;
+    }
+
+
+
+
+
+
