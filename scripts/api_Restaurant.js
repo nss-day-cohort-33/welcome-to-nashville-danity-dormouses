@@ -26,7 +26,7 @@ document.getElementById("button-restaurants").addEventListener("click", () => {
 let resultFieldRest = document.getElementById("results")
 
 resultFieldRest.addEventListener("click", () => {
-    if (event.target.id.includes("butt-")) {
+    if (event.target.id.includes("buttRest-")) {
             // console.log("this is the event ID before split", event.target.id)
         let buttonIdArray = event.target.id.split("-")
             // console.log("this is the event ID after the split", buttonIdArray)
@@ -42,8 +42,8 @@ function AddFoodComponentToDom(nameOfRestaurant) {
 
 function createFoodSearchComponent(foodObj) {
     return `
-        <h2 id = rest-${uniqueRestId}>${foodObj.restaurant.name}</h2>
-            <button id = butt-${uniqueRestButtonId}>Save</button>
+        <h2 id = "rest-${uniqueRestId}">${foodObj.restaurant.name}</h2>
+            <button id = "buttRest-${uniqueRestButtonId}">Save</button>
     `;
 }
 
