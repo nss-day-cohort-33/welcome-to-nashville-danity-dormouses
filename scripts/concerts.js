@@ -38,5 +38,5 @@ function createConcertSearchComponent(concertObj) {
 }
 
 function putMyConcertIntoTheItinerary (concertElement) {
-	document.getElementById("concert-itinerary").innerHTML = "Concert:" + concertElement;
+	document.getElementById("concert-itinerary").innerHTML = concertElement;
 }

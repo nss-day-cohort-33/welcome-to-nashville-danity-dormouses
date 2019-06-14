@@ -41,7 +41,7 @@ document.querySelector("#button-parks").addEventListener("click", () => {
 
 
 function AddSelectedComponentToDom(selectedComponent) {
-  document.getElementById("itinerary").innerHTML += selectedComponent;
+  document.getElementById("park-itinerary").innerHTML += selectedComponent;
 }
 
 function AddParkComponentToDom(parkComponent) {
@@ -57,6 +57,6 @@ function createParkSearchComponent(parkObj, index) {
 
 function createItineraryComponent(park) {
   return `
-    <h3 id="park-itinerary"><strong>Park: </strong>${park}</h3>
+    ${park}
   `;
 }
