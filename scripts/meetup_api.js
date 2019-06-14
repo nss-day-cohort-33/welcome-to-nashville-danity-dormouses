@@ -46,5 +46,5 @@ function createMeetupComponent(meetupObj) {
 
 
 function putMyMeetupIntoTheItinerary(meetupElement) {
-  document.getElementById("meetup-itinerary").innerHTML = "meetup:" + meetupElement;
-} 
+  document.getElementById("meetup-itinerary").innerHTML = meetupElement;
+}

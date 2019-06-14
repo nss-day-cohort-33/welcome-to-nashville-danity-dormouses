@@ -17,11 +17,11 @@ document.getElementById("button-restaurants").addEventListener("click", () => {
           uniqueRestButtonId++ 
           uniqueRestId++
         AddFoodComponentToDom(createFoodSearchComponent(food.restaurants[i]))
-        
+
         }
     })
 })
- 
+
 
 let resultFieldRest = document.getElementById("results")
 
@@ -45,7 +45,7 @@ function createFoodSearchComponent(foodObj) {
         <h2 id = rest-${uniqueRestId}>${foodObj.restaurant.name}</h2>
             <button id = butt-${uniqueRestButtonId}>Save</button>
     `;
-} 
+}
 
 function putMyRestaurantIntoTheItinerary (restaurantElement) {
     document.getElementById("restaurant-itinerary").innerHTML = "Restaurant: " + restaurantElement;
