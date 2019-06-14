@@ -4,6 +4,7 @@
 // }
 let uniqueButtonId = 0
 let uniqueMeetupId = 0
+
 let searchInput = document.querySelector("#input-meetups");
 document.querySelector("#button-meetups").addEventListener("click", () => {
   let meetup_type = searchInput.value;
@@ -26,7 +27,7 @@ document.querySelector("#button-meetups").addEventListener("click", () => {
 let resultFieldMeet = document.getElementById("results")
 
 resultFieldMeet.addEventListener("click", () => {
-    if (event.target.id.includes("butt-")) {
+    if (event.target.id.includes("buttMeet-")) {
         let buttonIdArray = event.target.id.split ("-")
         let meetupElement = document.getElementById(`meet-${buttonIdArray[1]}`).textContent
         putMyMeetupIntoTheItinerary(meetupElement)
@@ -38,8 +39,8 @@ function AddMeetupToDom(meetupName) {
 }
 
 function createMeetupComponent(meetupObj) {
-  return `<h2 id = meet-${uniqueMeetupId}>${meetupObj.name.text}</h2>
-  <button id = butt-${uniqueButtonId}>Save</button>`;
+  return `<h2 id = "meet-${uniqueMeetupId}">${meetupObj.name.text}</h2>
+  <button id = "buttMeet-${uniqueButtonId}">Save</button>`;
 }
 
 
