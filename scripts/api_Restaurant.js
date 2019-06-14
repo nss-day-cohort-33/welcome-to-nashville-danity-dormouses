@@ -4,7 +4,7 @@
 // }
 
 let uniqueRestId = 0
-let uniqueButtonId = 0 
+let uniqueButtonId = 0
 
 let inputCuisineData = document.getElementById("input-restaurants")
 document.getElementById("button-restaurants").addEventListener("click", () => {
@@ -14,14 +14,14 @@ document.getElementById("button-restaurants").addEventListener("click", () => {
     .then(food => {
         document.getElementById("results").innerHTML = "";
       for (let i = 0; i <food.restaurants.length ; i++) {
-          uniqueButtonId++ 
+          uniqueButtonId++
           uniqueRestId++
         AddFoodComponentToDom(createFoodSearchComponent(food.restaurants[i]))
-        
+
         }
     })
 })
- 
+
 
 let resultFieldRest = document.getElementById("results")
 
@@ -45,10 +45,10 @@ function createFoodSearchComponent(foodObj) {
         <h2 id = rest-${uniqueRestId}>${foodObj.restaurant.name}</h2>
             <button id = butt-${uniqueButtonId}>Save</button>
     `;
-} 
+}
 
 function putMyRestaurantIntoTheItinerary (restaurantElement) {
-    document.getElementById("restaurant-itinerary").innerHTML = "Restaurant:" + restaurantElement;
+    document.getElementById("restaurant-itinerary").innerHTML = restaurantElement;
     }
 
 
