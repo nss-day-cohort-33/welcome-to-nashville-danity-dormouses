@@ -1,5 +1,30 @@
 
-section {
-  max-width: 300px;
+body {
+  font-family: 'Averia Serif Libre', cursive;
 }
 
+section {
+  max-width: 337px;
+}
+
+fieldset {
+  font-family: 'Pompiere', cursive;
+}
+
+fieldset button {
+  float: right;
+  height: 45px;
+  width: 100px;
+  border-radius: 5px;
+  background-color: #2a9865;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+fieldset label {
+  width: 40px;
+  line-height: 44px;
+  display: inline-block;
+}

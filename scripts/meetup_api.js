@@ -7,7 +7,6 @@ let uniqueMeetupId = 0
 let searchInput = document.querySelector("#input-meetups");
 document.querySelector("#button-meetups").addEventListener("click", () => {
   let meetup_type = searchInput.value;
-  console.log(meetup_type);
   fetch(
     `https://www.eventbriteapi.com/v3/events/search/?location.address=nashville&token=${meetup_app_keys}&q=${meetup_type}`
   )
@@ -39,7 +38,6 @@ function AddMeetupToDom(meetupName) {
 }
 
 function createMeetupComponent(meetupObj) {
-  console.log(meetupObj);
   return `<h2 id = meet-${uniqueMeetupId}>${meetupObj.name.text}</h2>
   <button id = butt-${uniqueButtonId}>Save</button>`;
 }
