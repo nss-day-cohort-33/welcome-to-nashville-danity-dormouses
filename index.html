@@ -5,19 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Pompiere&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
   <title>Welcome to Nashville</title>
 </head>
 <body>
-  <h1>Welcome to Nashville!</h1>
-  <h2>Search for stuff to do today</h2>
+  <h1>Nashville Starter Pack</h1>
+  <h2>Pare down your weekend's activities.</h2>
 
   <section>
 
     <fieldset id="parkFeatures">
-      <label>Parks</label>
+      <label>Park</label>
       <select id="selection-parks">
-          <!-- <option value="none"></option> -->
+          <option value="none">park by feature</option>
           <option value="camping_available_by_permit">Camping</option>
           <option value="dog_park">Dog Park</option>
           <option value="hiking_trails">Hiking Trails</option>
@@ -32,17 +33,20 @@
     </fieldset>
 
     <fieldset>
-      <input id="input-restaurants" type="text" placeholder="restaurants by food type">
+      <label for="input-restaurants">Food</label>
+      <input id="input-restaurants" type="text" placeholder="restaurant by food type">
       <button id="button-restaurants" type="submit">Search</button>
     </fieldset>
 
     <fieldset>
-      <input id="input-meetups" type="text" placeholder="meetup type">
+        <label for="input-meetups">Meetup</label>
+        <input id="input-meetups" type="text" placeholder="meetup type">
       <button id="button-meetups" type="submit">Search</button>
     </fieldset>
 
     <fieldset>
-      <input id="input-concerts" type="text" placeholder="concerts">
+        <label for="input-concert">Concert</label>
+        <input id="input-concerts" type="text" placeholder="concert by genre">
       <button id="button-concerts" type="submit">Search</button>
     </fieldset>
 
